@@ -67,7 +67,7 @@ public class Function {
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(Keyword.contactDetailsText)));
 			String data = Driver.sData;
 			//ArrayList<String> details = new ArrayList<String>(5);
-			ArrayList<String> details = new ArrayList<>(Arrays.asList(data.split(",")));
+			List<String> details = new ArrayList<>(Arrays.asList(data.split(",")));
 			if(details.get(0) != null)
 				Action.driver.findElement(By.xpath(Keyword.firstNameTextbox)).sendKeys(details.get(0));
 			if(details.get(1) != null)
@@ -95,6 +95,72 @@ public class Function {
 				Driver.result = true;
 			else
 				Driver.result = false;
+		}
+		catch (Exception e){
+			System.out.println("Error Occured");
+			Driver.result = false;
+		}
+	}
+	public void selectCategoryMobile() {
+		try {
+			System.out.println("Executing selectCategoryMobile...");
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Keyword.categoryMobile)));
+
+			Action.driver.findElement(By.xpath(Keyword.categoryMobile)).click();
+			Driver.result = true;
+		}
+		catch (Exception e){
+			System.out.println("Error Occured");
+			Driver.result = false;
+		}
+	}
+	
+
+	
+	public void selectCategoryMobileAccessories() {
+		try {
+			System.out.println("Executing categoryMobileAccessories...");
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Keyword.categoryMobileAcc)));
+			Action.driver.findElement(By.xpath(Keyword.categoryMobileAcc)).click();
+			Driver.result = true;
+		}
+		catch (Exception e){
+			System.out.println("Error Occured");
+			Driver.result = false;
+		}
+	}
+	
+	public void selectPtronPride() {
+		try {
+			System.out.println("Executing selectPtronPride...");
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Keyword.pTronPride)));
+			Action.driver.findElement(By.xpath(Keyword.pTronPride)).click();
+			Driver.result = true;
+		}
+		catch (Exception e){
+			System.out.println("Error Occured");
+			Driver.result = false;
+		}
+	}
+	public void selectcolorGray() {
+		try {
+			System.out.println("Executing selectcolorGray...");
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Keyword.colorGray)));
+			Action.driver.findElement(By.xpath(Keyword.colorGray)).click();
+			Driver.result = true;
+		}
+		catch (Exception e){
+			System.out.println("Error Occured");
+			Driver.result = false;
+		}
+	}
+	
+	public void selectAddToCart() {
+		try {
+			System.out.println("Executing selectcolorGray...");
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Keyword.AddToCartBtn)));
+			Action.driver.findElement(By.xpath(Keyword.AddToCartBtn)).click();
+			Driver.result = true;
 		}
 		catch (Exception e){
 			System.out.println("Error Occured");

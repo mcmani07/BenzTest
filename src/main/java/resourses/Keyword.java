@@ -2,7 +2,7 @@ package resourses;
 
 public class Keyword {
 
-	public static final String URL = "http://shop.mercedes-benz.com/en-th/shop/vehicle/srp";
+	public static final String URL = "https://www.amazon.in/";
 	public static final String Path_TestData = "C://Users//mcman//eclipse-workspace//MercedesBenzProject//TestCaseSheet.xlsx";
 	public static final String File_TestData = "TestCaseSheet.xlsx";
 	public static final String KEYWORD_FAIL = "FAIL";
@@ -30,4 +30,9 @@ public class Keyword {
 	public static final String mobileNumberTextbox = "//label[contains(text(),'Mobile')]/following::input[1]";
 	public static final String commentsTextbox = "//label[contains(text(),'Comment')]/following::textarea";
 	public static final String proceedBtn = "//button[text()[contains(.,'Proceed')]]";
+	public static final String categoryMobile = "//a[contains(.,'Mobiles')]";
+	public static final String categoryMobileAcc = "//a/span[contains(.,'Mobile Accessories')]";
+	public static final String pTronPride ="//a[contains(.,'pTron Pride Lite HBE (High Bass Earphones)')]";
+	public static final String colorGray =  "//li[@title='Click to select Gray']";
+	public static final String AddToCartBtn = "//input[@id='add-to-cart-button']";
 }

@@ -53,13 +53,13 @@ public class Action {
 			driver.get(Keyword.URL);
 
 			WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(25));
-			wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("cmm-cookie-banner")));
-			WebElement shadowHost = driver.findElement(By.cssSelector("cmm-cookie-banner"));
+//			wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("cmm-cookie-banner")));
+//			WebElement shadowHost = driver.findElement(By.cssSelector("cmm-cookie-banner"));
 			sleep(10000);
-			SearchContext shadowRoot = shadowHost.getShadowRoot();
-			wait.until(ExpectedConditions.elementToBeClickable(shadowRoot.findElement(By.cssSelector("div.button-wrapper>button:nth-child(2)"))));
-			WebElement shadowContent = shadowRoot.findElement(By.cssSelector("div.button-wrapper>button:nth-child(2)"));
-			shadowContent.click();
+//			SearchContext shadowRoot = shadowHost.getShadowRoot();
+//			wait.until(ExpectedConditions.elementToBeClickable(shadowRoot.findElement(By.cssSelector("div.button-wrapper>button:nth-child(2)"))));
+//			WebElement shadowContent = shadowRoot.findElement(By.cssSelector("div.button-wrapper>button:nth-child(2)"));
+//			shadowContent.click();
 		}catch(Exception e){
 			e.printStackTrace();
 			Driver.result = false;
