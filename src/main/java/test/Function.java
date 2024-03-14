@@ -5,14 +5,25 @@ import resourses.Action;
 import resourses.Keyword;
 import util.Driver;
 
+import java.io.File;
+import java.io.IOException;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+ 
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.io.FileHandler;
+import org.openqa.selenium.remote.server.handler.ImplicitlyWait;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Function {
@@ -25,7 +36,7 @@ public class Function {
 			String type = Driver.sData;
 			String xpath = String.format(Keyword.bodyType,type);
 			Action.driver.findElement(By.xpath(xpath)).click();
-			Action.sleep(5000);
+			
 			Driver.result = true;
 
 		}
@@ -114,7 +125,20 @@ public class Function {
 			Driver.result = false;
 		}
 	}
-	
+	public void clicks() {
+		try {
+			System.out.println("Executing selectCategoryMobile...");
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Keyword.categoryMobile)));
+			Actions act =new Actions(Action.driver);
+			WebElement element = Action.driver.findElement(By.xpath(Keyword.categoryMobile));
+			act.contextClick(element).build().perform();
+			Driver.result = true;
+		}
+		catch (Exception e){
+			System.out.println("Error Occured");
+			Driver.result = false;
+		}
+	}
 
 	
 	public void selectCategoryMobileAccessories() {
@@ -166,5 +190,18 @@ public class Function {
 			System.out.println("Error Occured");
 			Driver.result = false;
 		}
+	}
+	
+	public void takeScreenshot() throws IOException {
+		TakesScreenshot scr = (TakesScreenshot)Action.driver;
+		File f = scr.getScreenshotAs(OutputType.FILE); 
+		FileUtils.copyFile(f,new File("C:\\Users\\mcman\\eclipse-workspace\\MercedesBenzProject\\WebDriver\\pic.png"));
+		
+		File source = ((FirefoxDriver)Action.driver).getFullPageScreenshotAs(OutputType.FILE);
+	     FileHandler.copy(source, new File("QED_Full_Page_Screenshot.png"));
+	}
+	
+	public void scrolldown() {
+		
 	}
 }

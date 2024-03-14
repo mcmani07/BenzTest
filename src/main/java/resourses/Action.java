@@ -10,10 +10,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import util.Driver;
-
+import org.openqa.selenium.support.FindBy; 
+import org.openqa.selenium.support.How; 
 public class Action {
 
 	public static WebDriver driver;
@@ -24,7 +27,7 @@ public class Action {
 			System.out.println(data);
 			if(data.equals("Firefox")){
 				
-				System.setProperty("webdriver.gecko.driver", "C:\\Users\\mcman\\eclipse-workspace\\MercedesBenzProject\\WebDriver\\geckodriver.exe");
+				System.setProperty("webdriver.geck  o.driver", "C:\\Users\\mcman\\eclipse-workspace\\MercedesBenzProject\\WebDriver\\geckodriver.exe");
 				driver=new FirefoxDriver();
 				System.out.println("Mozilla Firefox browser started");				
 				}
@@ -79,6 +82,7 @@ public class Action {
 		try{
 			System.out.println("Closing the browser");
 			driver.quit();
+			@FindBy(how = How.XPATH, using ="//a") WebElement ele;
 		 }catch(Exception e){
 			 System.out.println("Not able to Close the Browser --- " + e.getMessage());
 			 Driver.result = false;
